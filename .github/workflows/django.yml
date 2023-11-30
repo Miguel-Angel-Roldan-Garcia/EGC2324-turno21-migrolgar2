@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - egc_test
-  
 
 jobs:
   build:
