@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - egc_test
+  workflow_call:
 
 jobs:
   build:
