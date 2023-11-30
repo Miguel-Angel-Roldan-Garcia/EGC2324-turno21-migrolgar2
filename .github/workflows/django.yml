@@ -7,7 +7,10 @@ on:
 
 jobs:
   build:
-
+    strategy:
+      matrix:
+        pyversion: ["14.9", "15"]
+        
     runs-on: ubuntu-latest
 
     services:
@@ -24,10 +27,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Set up Python 3.10.12
+    - name: Set up Python based on matrix
       uses: actions/setup-python@v4
       with:
-        python-version: 3.10.12
+        python-version: ${{ matrix.pyversion }}
     - name: psycopg2 prerequisites
       run: sudo apt-get install libpq-dev
     - name: Install dependencies and config
