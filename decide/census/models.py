@@ -1,6 +1,8 @@
 from django.db import models
 
+
 #Conflicto rama rq2
+# Comentario de conflicto
 class Census(models.Model):
     voting_id = models.PositiveIntegerField()
     voter_id = models.PositiveIntegerField()
